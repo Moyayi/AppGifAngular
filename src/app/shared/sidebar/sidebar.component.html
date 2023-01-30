@@ -9,8 +9,9 @@
         DashBoard
       </a> -->
       <a 
+        *ngFor="let arg of historial"
         class="list-group-item list-group-item-action"
-        *ngFor="let arg of historial">
+        (click) = "buscar( arg )">
         {{ arg | titlecase}}
       </a>
     </div>
