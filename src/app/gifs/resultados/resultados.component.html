@@ -1,12 +1,20 @@
 <div class="row">
-    <div *ngFor="let gif of resultados" class="col-md-4 col-sm-6">
-        <div class="card animate__animated animate__bounceIn">
-            <div class="card-body">
-                <img [src]="gif.images.downsized_medium.url" [alt]="gif.title" class="card-img-top">
-                <p class="card-text">
-                    {{gif.title}}
-                </p>
+    <div *ngFor="let gif of resultados" class="col-md-4 col-sm-6 mx-auto mb-5 gif">
+        <a [href]="gif.url" target="_blank" >
+            <div class="card animate__animated animate__bounceIn">
+                <div class="card-body">
+                    <img [src]="gif.images.downsized_medium.url" [width]="gif.images.downsized_medium.width" [height]="300" [alt]="gif.title" class="card-img-top">
+                    <ng-template [ngIf]="gif.title !== ''" [ngIfElse]="withoutTitle">
+                        <p class="card-text">
+                            {{gif.title}}
+                        </p>
+                    </ng-template>
+                    <ng-template #withoutTitle>
+                        <p class="card-text">Sin título</p>
+                    </ng-template>
+                    
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>

@@ -2,4 +2,12 @@
     height: 100%;
     min-height: 100vh;
     min-width: 180px;
+    background: rgb(128,241,250);
+    background: linear-gradient(180deg, rgba(128,241,250,1) 0%, rgba(8,235,160,1) 100%);
+    color:black;
+}
+
+#linea{
+    border: solid 2px black;
+    border-radius: 15px;
 }
