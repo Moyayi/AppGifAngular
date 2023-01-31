@@ -1,18 +1,19 @@
 <div class="p-3" id="sidebar">
-    <h3 >Gifs- App</h3>
+    <h3 class="text-center">Gifs- App</h3>
 
-    <hr id="linea">
+    <div id="linea"></div>
  
-    <div class="list-group list-reset">
-      <!-- <a href="#"
-      class="list-group-item list-group-item-action">
-        DashBoard
-      </a> -->
-      <a 
-        *ngFor="let arg of historial"
-        class="list-group-item list-group-item-action"
-        (click) = "buscar( arg )">
-        {{ arg | titlecase}}
-      </a>
+    <div class="" *ngFor="let arg of historial" >
+      <div class="d-flex flex-row">
+        <div class="remove animate__animated animate__fadeInLeftBig" (click) = "clear(arg)">X</div>
+        <div 
+          class="history animate__animated animate__fadeInLeftBig"
+          (click) = "buscar( arg )"
+          >
+          {{ arg | titlecase}}
+        </div>
+      </div>
+
+
     </div>
   </div>  

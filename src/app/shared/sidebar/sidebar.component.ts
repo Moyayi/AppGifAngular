@@ -17,4 +17,7 @@ export class SidebarComponent {
   buscar ( termino : string ) {
     this.gifService.buscarGifs(termino)
   }
+  clear ( arg : string){
+    this.gifService.clear(arg)
+  }
 }

@@ -23,6 +23,11 @@ export class GifsService {
     this._historial = JSON.parse(localStorage.getItem('historial') !) || []
   }
 
+  clear( busqueda : string) : void{
+    this._historial.splice(this._historial.findIndex((element) => element === busqueda), 1)
+    localStorage.setItem('historial', JSON.stringify(this._historial))
+  }
+
   buscarGifs( query : string ){
     query = query.trim().toLowerCase();
     if ( !this._historial.includes(query)){
